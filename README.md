@@ -18,3 +18,11 @@ You must include the Google Platform Library on your web pages that integrate Go
 Specify the client ID you created for your app in the Google Developers Console with the google-signin-client_id meta element. <br />
 <code>&lt;meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"&gt;</code><br />
 <blockquote>Note: You can also specify your app's client ID with the client_id parameter of the gapi.auth2.init() method.</blockquote>
+
+<br /><br />
+
+## Add a Google Sign-In button
+The easiest way to add a Google Sign-In button to your site is to use an automatically rendered sign-in button. With only a few lines of code, you can add a button that automatically configures itself to have the appropriate text, logo, and colors for the sign-in state of the user and the scopes you request.<br />
+
+To create a Google Sign-In button that uses the default settings, add a div element with the class g-signin2 to your sign-in page: <br />
+<code><div class="g-signin2" data-onsuccess="onSignIn"></div></code><br />
