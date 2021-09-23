@@ -16,7 +16,7 @@ You must include the Google Platform Library on your web pages that integrate Go
 <code><script src="https://apis.google.com/js/platform.js" async defer></script></code><br />
 
 Specify the client ID you created for your app in the Google Developers Console with the google-signin-client_id meta element. <br />
-<code>&lt;meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"&gt;</code><br />
+<snippet>&lt;meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"&gt;</snippet><br />
 <blockquote>Note: You can also specify your app's client ID with the client_id parameter of the gapi.auth2.init() method.</blockquote>
 
 ## Add a Google Sign-In button
