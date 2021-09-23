@@ -4,7 +4,7 @@
 ## Create authorization credentials
 Any application that uses OAuth 2.0 to access Google APIs must have authorization credentials that identify the application to Google's OAuth 2.0 server. The following steps explain how to create credentials for your project. Your applications can then use the credentials to access APIs that you have enabled for that project.
 
-- Go to the <a src="https://console.cloud.google.com/apis/credentials">Credentials page.</a>
+- Go to the <a href="https://console.cloud.google.com/apis/credentials">Credentials page.</a>
 - Click Create credentials > OAuth client ID.
 - Select the Web application application type.
 - Name your OAuth 2.0 client and click Create
@@ -30,27 +30,27 @@ After you have signed in a user with Google using the default scopes, you can ac
 
 To retrieve profile information for a user, use the getBasicProfile() method.<br />
 <code>
-  function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
+  function onSignIn(googleUser) {<br />
+  var profile = googleUser.getBasicProfile();<br />
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.<br />
+  console.log('Name: ' + profile.getName());<br />
+  console.log('Image URL: ' + profile.getImageUrl());<br />
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.<br />
+}<br />
 </code><br />
 <blockquote>Important: Do not use the Google IDs returned by getId() or the user's profile information to communicate the currently signed in user to your backend server. Instead, send ID tokens, which can be securely validated on the server.</blockquote><br />
-<a src="https://developers.google.com/identity/sign-in/web/backend-auth">Click me to read information about the ID tokens.</a>
+<a href="https://developers.google.com/identity/sign-in/web/backend-auth">Click me to read information about the ID tokens.</a>
 
 ## Sign out a user
 You can enable users to sign out of your app without signing out of Google by adding a sign-out button or link to your site. To create a sign-out link, attach a function that calls the GoogleAuth.signOut() method to the link's onclick event.<br />
 <code>
 &lt;a href="#" onclick="signOut();"&gt;Sign out&lt;/a&gt;
-&lt;script&gt;
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
+&lt;script&gt;<br />
+  function signOut() {<br />
+    var auth2 = gapi.auth2.getAuthInstance();<br />
+    auth2.signOut().then(function () {<br />
+      console.log('User signed out.');<br />
+    });<br />
+  }<br />
 &lt;/script&gt;
 </code>
