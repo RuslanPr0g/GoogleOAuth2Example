@@ -11,3 +11,6 @@ Any application that uses OAuth 2.0 to access Google APIs must have authorizatio
 
 After configuration is complete, take note of the client ID that was created. You will need the client ID to complete the next steps. (A client secret is also created, but you need it only for server-side operations.)
 
+## Load the Google Platform Library
+You must include the Google Platform Library on your web pages that integrate Google Sign-In.
+<code><script src="https://apis.google.com/js/platform.js" async defer></script></code>
