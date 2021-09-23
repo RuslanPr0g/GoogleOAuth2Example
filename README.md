@@ -12,5 +12,9 @@ Any application that uses OAuth 2.0 to access Google APIs must have authorizatio
 After configuration is complete, take note of the client ID that was created. You will need the client ID to complete the next steps. (A client secret is also created, but you need it only for server-side operations.)
 
 ## Load the Google Platform Library
-You must include the Google Platform Library on your web pages that integrate Google Sign-In.
-<code><script src="https://apis.google.com/js/platform.js" async defer></script></code>
+You must include the Google Platform Library on your web pages that integrate Google Sign-In. <br />
+<code><script src="https://apis.google.com/js/platform.js" async defer></script></code><br />
+
+Specify the client ID you created for your app in the Google Developers Console with the google-signin-client_id meta element. <br />
+<code><meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"></code><br />
+<blockquote>Note: You can also specify your app's client ID with the client_id parameter of the gapi.auth2.init() method.</blockquote>
