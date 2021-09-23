@@ -42,5 +42,16 @@ To retrieve profile information for a user, use the getBasicProfile() method.<br
 </code><br />
 <blockquote>Important: Do not use the Google IDs returned by getId() or the user's profile information to communicate the currently signed in user to your backend server. Instead, send <a src="https://developers.google.com/identity/sign-in/web/backend-auth">ID tokens</a>, which can be securely validated on the server.</blockquote>
 
-
-
+## Sign out a user
+You can enable users to sign out of your app without signing out of Google by adding a sign-out button or link to your site. To create a sign-out link, attach a function that calls the GoogleAuth.signOut() method to the link's onclick event.<br />
+<code>
+&lt;a href="#" onclick="signOut();"&gt;Sign out&lt;/a&gt;
+&lt;script&gt;
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+&lt;/script&gt;
+</code>
