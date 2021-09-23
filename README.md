@@ -16,7 +16,7 @@ You must include the Google Platform Library on your web pages that integrate Go
 <code><script src="https://apis.google.com/js/platform.js" async defer></script></code><br />
 
 Specify the client ID you created for your app in the Google Developers Console with the google-signin-client_id meta element. <br />
-<snippet>&lt;meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"&gt;</snippet><br />
+<code>&lt;meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"&gt;</code><br />
 <blockquote>Note: You can also specify your app's client ID with the client_id parameter of the gapi.auth2.init() method.</blockquote>
 
 ## Add a Google Sign-In button
@@ -30,13 +30,13 @@ After you have signed in a user with Google using the default scopes, you can ac
 
 To retrieve profile information for a user, use the getBasicProfile() method.<br />
 <code>
-  function onSignIn(googleUser) {<br />
-  var profile = googleUser.getBasicProfile();<br />
+  function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.<br />
-  console.log('Name: ' + profile.getName());<br />
-  console.log('Image URL: ' + profile.getImageUrl());<br />
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.<br />
-}<br />
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
 </code><br />
 <blockquote>Important: Do not use the Google IDs returned by getId() or the user's profile information to communicate the currently signed in user to your backend server. Instead, send <a href="https://developers.google.com/identity/sign-in/web/backend-auth">ID tokens</a>, which can be securely validated on the server.</blockquote>
 
@@ -44,12 +44,12 @@ To retrieve profile information for a user, use the getBasicProfile() method.<br
 You can enable users to sign out of your app without signing out of Google by adding a sign-out button or link to your site. To create a sign-out link, attach a function that calls the GoogleAuth.signOut() method to the link's onclick event.<br />
 <code>
 &lt;a href="#" onclick="signOut();"&gt;Sign out&lt;/a&gt;
-&lt;script&gt;<br />
-  function signOut() {<br />
-    var auth2 = gapi.auth2.getAuthInstance();<br />
-    auth2.signOut().then(function () {<br />
-      console.log('User signed out.');<br />
-    });<br />
-  }<br />
+&lt;script&gt;
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
 &lt;/script&gt;
 </code>
