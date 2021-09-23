@@ -25,4 +25,22 @@ Specify the client ID you created for your app in the Google Developers Console 
 The easiest way to add a Google Sign-In button to your site is to use an automatically rendered sign-in button. With only a few lines of code, you can add a button that automatically configures itself to have the appropriate text, logo, and colors for the sign-in state of the user and the scopes you request.<br />
 
 To create a Google Sign-In button that uses the default settings, add a div element with the class g-signin2 to your sign-in page: <br />
-<code><div class="g-signin2" data-onsuccess="onSignIn"></div></code><br />
+<code>&lt;div class="g-signin2" data-onsuccess="onSignIn"&gt;&lt;/div&gt;</code><br />
+
+## Get profile information
+After you have signed in a user with Google using the default scopes, you can access the user's Google ID, name, profile URL, and email address.<br />
+
+To retrieve profile information for a user, use the getBasicProfile() method.<br />
+<code>
+  function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+</code><br />
+<blockquote>Important: Do not use the Google IDs returned by getId() or the user's profile information to communicate the currently signed in user to your backend server. Instead, send <a src="https://developers.google.com/identity/sign-in/web/backend-auth">ID tokens</a>, which can be securely validated on the server.</blockquote>
+
+
+
